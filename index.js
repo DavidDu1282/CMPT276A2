@@ -3,20 +3,43 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 
-const pool = new Pool({
+
+var pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
 });
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .get('/times', (req, res) => res.send(showTimes()))
-  .get('/db', async (req, res) => {
+var app = express()
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
+app.use(express.static(path.join(__dirname, 'public')))
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+app.get('/', (req, res) => res.render('pages/index'))
+app.get('/times', (req, res) => res.send(showTimes()))
+
+app.get('/Database', (req,res) => {
+  var getUsersQuery = `SELECT * FROM usr`;
+  var results;
+  pool.query(getUsersQuery,(error,result)=>{
+    if(error)
+      res.end(error)
+    results = {'rows':result.rows}
+    res.render('pages/db', results);
+  })
+
+})
+
+app.get('/users/:id', (req,res)=>{
+  var uid = req.params.id;
+  console.log(req.params.id);
+  //search the database using the uid
+  res.send("got it!");
+})
+
+  app.get('/db', async (req, res) => {
     try {
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM test_table');
@@ -28,7 +51,13 @@ express()
       res.send("Error " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  app.post('/adduser', (req,res)=>{
+    console.log("post request for /adduser");
+    var uname = req.body.uname;
+    var age = req.body.age;
+    res.send(`username: ${uname}, age: ${age}`)
+  })
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
   showTimes = () => {
     let result = '';
