@@ -59,7 +59,7 @@ app.get('/users/:id', (req,res)=>{
     var usize = req.body.Size;
     var uheight = req.body.Height;
     var utype = req.body.Type;
-    var getUsersQuery = `insert into people values (uname,usize,uheight,utype)`;
+    var getUsersQuery = `insert into people values ('Bob',150,30,'A')`;
     var results;
     pool.query(getUsersQuery,(error,result)=>{
       //if(error)
