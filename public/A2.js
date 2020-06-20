@@ -7,4 +7,5 @@ document.getElementById("adduser").addEventListener('click',(evt)=>{
   var uheight = document.getElementById(Height).body.Height;
   var utype = document.getElementById(Type).body.Type;
   common.pool.query(`insert into people values (uname,usize,uheight,utype)`);
+  console.log("inserted");
 });
