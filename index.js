@@ -60,7 +60,7 @@ app.get('/users/:id', (req,res)=>{
     var uheight = req.body.Height;
     var utype = req.body.Type;
 
-    var addUsersQuery = `INSERT INTO PEOPLE (Name, size, age, type) VALUES ('Bob',150,30,'A'); COMMIT;`;
+    var addUsersQuery = `INSERT INTO PEOPLE (Name, size, age, type) VALUES ('John',150,30,'A');`;
     var results;
     console.log("preparing to query");
     pool.query(addUsersQuery,(error,result)=>{
