@@ -2,10 +2,10 @@
 //const other = require('./other');
 
 document.getElementById("adduser").addEventListener('click',(evt)=>{
-  var uname = document.getElementById(Name).value;
-  var usize = document.getElementById(Size).value;
-  var uheight = document.getElementById(Height).value;
-  var utype = document.getElementById(Type).value;
+  var uname = document.getElementById('Name').value;
+  var usize = document.getElementById('Size').value;
+  var uheight = document.getElementById('Height').value;
+  var utype = document.getElementById('Type').value;
   var getUsersQuery = `insert into people values (uname,usize,uheight,utype);`
   common.pool.query(getUsersQuery,(error,result)=>{
     if(error)
