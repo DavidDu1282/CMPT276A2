@@ -57,7 +57,10 @@ app.get('/users/:id', (req,res)=>{
     console.log("post request for /adduser");
     var uname = req.body.Name;
     var usize = req.body.Size;
-    res.send(`username: ${uname}, age: ${usize}`)
+    var uheight = req.body.Height;
+    var utype = req.body.Type;
+    res.send(`insert into people values (uname,usize,uheight,utype)`)
+    `insert into people values ('John',150,20,'a')`;
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
