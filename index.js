@@ -62,9 +62,9 @@ app.get('/users/:id', (req,res)=>{
     var getUsersQuery = `insert into people values (uname,usize,uheight,utype)`;
     var results;
     pool.query(getUsersQuery,(error,result)=>{
-      if(error)
-        res.end(error)
-      
+      //if(error)
+        //res.end(error)
+
     })
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
