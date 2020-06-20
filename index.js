@@ -2,8 +2,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
-const common = require('./common');
-const other = require('./other');
+
 
 var pool = new Pool({
   //connectionString: 'postgres://postgres:wndrspttnrd@localhost.people'
