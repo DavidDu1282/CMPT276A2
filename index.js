@@ -55,8 +55,8 @@ app.get('/users/:id', (req,res)=>{
   })
   app.post('/adduser', (req,res)=>{
     console.log("post request for /adduser");
-    var uname = req.body.name;
-    var usize = req.body.size;
+    var uname = req.body.Name;
+    var usize = req.body.Size;
     res.send(`username: ${uname}, age: ${usize}`)
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
