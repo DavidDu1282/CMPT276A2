@@ -21,7 +21,7 @@ app.get('/', (req, res) => res.render('pages/index'))
 app.get('/times', (req, res) => res.send(showTimes()))
 
 app.get('/Database', (req,res) => {
-  var getUsersQuery = `SELECT * FROM usr`;
+  var getUsersQuery = `SELECT * FROM people`;
   var results;
   pool.query(getUsersQuery,(error,result)=>{
     if(error)
