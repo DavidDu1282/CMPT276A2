@@ -1,5 +1,5 @@
-const common = require('./common');
-const other = require('./other');
+//const common = require('./common');
+//const other = require('./other');
 
 document.getElementById("adduser").addEventListener('click',(evt)=>{
   var uname = document.getElementById(Name).body.Name;
