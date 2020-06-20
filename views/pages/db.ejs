@@ -13,6 +13,7 @@
 
 <ul>
     <% rows.forEach(function(r) { %>
+        console.log("%s,%d,%d,%s", r.Name, r.Size, r.Height, r.Type)
         <li><%= r.Name %><%= r.Size %><%= r.Height %><%= r.Type %></li>
     <% }); %>
 </ul>
