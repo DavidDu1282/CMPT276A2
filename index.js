@@ -69,6 +69,9 @@ app.get('/users/:id', (req,res)=>{
         res.end(error)
 
       }
+      else{
+        console.log("inserted");
+      }
       //results = {'rows':result.rows}
       //res.render('pages/db', results);
     })
@@ -83,7 +86,7 @@ app.get('/users/:id', (req,res)=>{
       results = {'rows':result.rows}
       res.render('pages/db', results);
     })
-    console.log("inserted");
+
     res.end();
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
