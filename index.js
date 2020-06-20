@@ -82,6 +82,7 @@ app.get('/users/:id', (req,res)=>{
       res.render('pages/db', results);
     })
     console.log("inserted");
+    res.end();
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
