@@ -59,8 +59,8 @@ app.get('/users/:id', (req,res)=>{
     var usize = req.body.Size;
     var uheight = req.body.Height;
     var utype = req.body.Type;
-    res.send(`insert into people values (uname,usize,uheight,utype)`)
-    `insert into people values ('John',150,20,'a')`;
+    //res.send(`insert into people values (uname,usize,uheight,utype)`)
+    //`insert into people values ('John',150,20,'a')`;
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
