@@ -1,5 +1,6 @@
 //const common = require('./common');
 //const other = require('./other');
+const { Pool } = require('pg');
 var pool = new Pool({
   //connectionString: 'postgres://postgres:wndrspttnrd@localhost.people'
   connectionString: process.env.DATABASE_URL,
