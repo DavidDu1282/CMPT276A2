@@ -1,5 +1,13 @@
 //const common = require('./common');
 //const other = require('./other');
+var pool = new Pool({
+  //connectionString: 'postgres://postgres:wndrspttnrd@localhost.people'
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+
+});
 
 document.getElementById("adduser").addEventListener('click',(evt)=>{
   var uname = document.getElementById('Name').value;
