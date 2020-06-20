@@ -59,8 +59,14 @@ app.get('/users/:id', (req,res)=>{
     var usize = req.body.Size;
     var uheight = req.body.Height;
     var utype = req.body.Type;
-    //var getUsersQuery = `INSERT INTO PEOPLE (Name, size, age, type) VALUES ('Bob',150,30,'A')`;
+    var addUsersQuery = `INSERT INTO PEOPLE (Name, size, age, type) VALUES ('Bob',150,30,'A')`;
     var results;
+    pool.query(addUsersQuery,(error,result)=>{
+      if(error)
+        res.end(error)
+      //results = {'rows':result.rows}
+      //res.render('pages/db', results);
+    })
     var getUsersQuery = `SELECT * from people;`
     pool.query(getUsersQuery,(error,result)=>{
       if(error)
