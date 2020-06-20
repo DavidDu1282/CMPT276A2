@@ -72,7 +72,7 @@ app.get('/users/:id', (req,res)=>{
       //results = {'rows':result.rows}
       //res.render('pages/db', results);
     })
-    */
+    //*/
     var getUsersQuery = `SELECT * from people;`
     pool.query(getUsersQuery,(error,result)=>{
       if(error)
