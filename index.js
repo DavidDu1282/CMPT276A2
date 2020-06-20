@@ -10,7 +10,7 @@ var pool = new Pool({
   ssl: {
     rejectUnauthorized: false
   }
-  
+
 });
 
 var app = express()
@@ -55,9 +55,9 @@ app.get('/users/:id', (req,res)=>{
   })
   app.post('/adduser', (req,res)=>{
     console.log("post request for /adduser");
-    var uname = req.body.uname;
-    var age = req.body.age;
-    res.send(`username: ${uname}, age: ${age}`)
+    var uname = req.body.name;
+    var usize = req.body.size;
+    res.send(`username: ${uname}, age: ${usize}`)
   })
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
