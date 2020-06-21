@@ -133,7 +133,7 @@ app.get('/users/:id', (req,res)=>{
         }
         console.log("displaying type");
         totalresults += {'rows':result.rows}
-        console.log(results);
+        console.log(totalresults);
         //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
