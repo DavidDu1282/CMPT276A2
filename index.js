@@ -30,8 +30,8 @@ app.get('/Database', (req,res) => {
       res.end(error)
     results = {'rows':result.rows}
     console.log(result.rows[0]);
-    res.send(results);
-    //res.render('pages/db', results);
+    //res.send(results);
+    res.render('pages/db', results);
   })
 
 })
