@@ -60,7 +60,7 @@ app.get('/users/:id', (req,res)=>{
     var uheight = req.body.Height;
     var utype = req.body.Type;
 
-    var addUsersQuery = `INSERT INTO PEOPLE (Name, size, height, type) VALUES (${uname},${usize},${uheight},${utype});`;
+    var addUsersQuery = `INSERT INTO PEOPLE (Name, size, height, type) VALUES ('${uname}',${usize},${uheight},'${utype}');`;
     var results;
     console.log("preparing to query");
     console.log(addUsersQuery);
