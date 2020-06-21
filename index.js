@@ -90,6 +90,51 @@ app.get('/users/:id', (req,res)=>{
 
     res.end();
   })
+  app.post('/searchuser', (req,res)=>{
+    var temp = req.body.search;
+    var nameQ = `SELECT * from people where Name = '${temp}'`
+    var sizeQ = `SELECT * from people where Size = ${temp}`
+    var heightQ = `SELECT * from people where Height = ${temp}`
+    var typeQ = `SELECT * from people where Type = '${temp}'`
+    pool.query(nameQ,(error,result)=>{
+      if(error){
+        res.end(error)
+      }
+      console.log("displaying");
+      results = {'rows':result.rows}
+      res.render('pages/db', results);
+      res.end()
+    })
+    pool.query(sizeQ,(error,result)=>{
+      if(error){
+        res.end(error)
+      }
+      console.log("displaying");
+      results = {'rows':result.rows}
+      res.render('pages/db', results);
+      res.end()
+    })
+    pool.query(heightQ,(error,result)=>{
+      if(error){
+        res.end(error)
+      }
+      console.log("displaying");
+      results = {'rows':result.rows}
+      res.render('pages/db', results);
+      res.end()
+    })
+    pool.query(typeQ,(error,result)=>{
+      if(error){
+        res.end(error)
+      }
+      console.log("displaying");
+      results = {'rows':result.rows}
+      res.render('pages/db', results);
+      res.end()
+    })
+  })
+
+
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
   showTimes = () => {
