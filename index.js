@@ -127,7 +127,7 @@ app.get('/users/:id', (req,res)=>{
   })
   app.post('/searchheight', (req,res)=>{
     var temp = req.body.searchheight;
-    var nameQ = `SELECT * from people where Size = '${temp}'`
+    var nameQ = `SELECT * from people where Height = '${temp}'`
     var results;
 
       pool.query(nameQ,(error,result)=>{
@@ -145,7 +145,7 @@ app.get('/users/:id', (req,res)=>{
   })
   app.post('/searchtype', (req,res)=>{
     var temp = req.body.searchtype;
-    var nameQ = `SELECT * from people where Size = '${temp}'`
+    var nameQ = `SELECT * from people where Type = '${temp}'`
     var results;
 
       pool.query(nameQ,(error,result)=>{
