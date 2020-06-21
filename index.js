@@ -87,11 +87,11 @@ app.get('/users/:id', (req,res)=>{
   app.post('/searchuser', (req,res)=>{
     var temptext = req.body.searchtext;
     var tempnum = req.body.searchnum;
-    var nameQ = `SELECT * from people where Name = '${temp}'`
-    var sizeQ = `SELECT * from people where Size = ${temp}`
-    var heightQ = `SELECT * from people where Height = ${temp}`
-    var typeQ = `SELECT * from people where Type = '${temp}'`
-    if(typeof(temp) == "string"){
+    var nameQ = `SELECT * from people where Name = '${temptext}'`
+    var sizeQ = `SELECT * from people where Size = ${tempnum}`
+    var heightQ = `SELECT * from people where Height = ${tempnum}`
+    var typeQ = `SELECT * from people where Type = '${temptext}'`
+
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -101,8 +101,8 @@ app.get('/users/:id', (req,res)=>{
         res.render('pages/db', results);
         res.end()
       })
-    }
-    if(typeof(temp) == "number"){
+
+
       pool.query(sizeQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -122,8 +122,8 @@ app.get('/users/:id', (req,res)=>{
         res.render('pages/db', results);
         res.end()
       })
-    }
-    if(typeof(temp) == "string"){
+
+
       pool.query(typeQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -134,7 +134,7 @@ app.get('/users/:id', (req,res)=>{
         res.render('pages/db', results);
         res.end()
       })
-    }
+    
   })
 
 
