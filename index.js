@@ -29,11 +29,11 @@ app.get('/Database', (req,res) => {
     if(error)
       res.end(error)
     results = {'rows':result.rows}
-    console.log(result.rows[0]);
+    //console.log(result.rows[0]);
     //rows.forEach(function(r) {
 
     //});
-    res.send(results);
+    //res.send(results);
     res.render('pages/db', results);
   })
 
