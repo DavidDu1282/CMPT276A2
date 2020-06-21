@@ -11,12 +11,12 @@
 <div class="container">
 <h2>Main Display</h2>
 
-
+  <script>i = 0;</script>
      <%rows.forEach(function(r) {%>
-      <canvas id="canvas$r" width="150" height="150"></canvas>
+      <canvas id="canvas$i" width="150" height="150"></canvas>
       <script>
-      function draw() {
-        var canvas = document.getElementById('canvas$r');
+
+        var canvas = document.getElementById('canvas$i');
         if (canvas.getContext) {
           var context = canvas.getContext('2d');
 
@@ -24,8 +24,8 @@
           context.clearRect(40,40,60,60);
           context.strokeRect(45,45,50,50);
         }
-      }
-      draw()
+        i++
+
       </script>
     <% }); %>
 
