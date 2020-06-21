@@ -90,10 +90,10 @@ app.get('/users/:id', (req,res)=>{
     var tempheight =  req.body.searchheight;
     var temptype = req.body.searchtype;
 
-    var nameQ = `SELECT * from people where Name = '${temptext}'`
-    var sizeQ = `SELECT * from people where Size = ${tempnum}`
-    var heightQ = `SELECT * from people where Height = ${tempnum}`
-    var typeQ = `SELECT * from people where Type = '${temptext}'`
+    var nameQ = `SELECT * from people where Name = '${tempname}'`
+    var sizeQ = `SELECT * from people where Size = ${tempsize}`
+    var heightQ = `SELECT * from people where Height = ${tempheight}`
+    var typeQ = `SELECT * from people where Type = '${temptype}'`
     var totalresults;
     if(tempname != ""){
       pool.query(nameQ,(error,result)=>{
