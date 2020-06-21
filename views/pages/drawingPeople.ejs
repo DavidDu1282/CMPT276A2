@@ -11,22 +11,11 @@
 <div class="container">
 <h2>Main Display</h2>
 
-  <script>i = 0;</script>
      <%rows.forEach(function(r) {%>
-      <canvas id="canvas$i" width="150" height="150"></canvas>
-      <script>
+       <svg width="400" height="110">
+         <rect width="${r.size/r.height*10}" height="$r.height" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+       </svg>
 
-        var canvas = document.getElementById('canvas$i');
-        if (canvas.getContext) {
-          var context = canvas.getContext('2d');
-
-          context.fillRect(20,20,100,100);
-          context.clearRect(40,40,60,60);
-          context.strokeRect(45,45,50,50);
-        }
-        i++
-
-      </script>
     <% }); %>
 
 
