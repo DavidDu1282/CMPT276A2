@@ -85,60 +85,67 @@ app.get('/users/:id', (req,res)=>{
     res.end();
   })
   app.post('/searchuser', (req,res)=>{
-    var temptext = req.body.searchtext;
-    var tempnum = req.body.searchnum;
+    var tempname = req.body.searchname;
+    var tempsize = req.body.searchsize;
+    var tempheight =  req.body.searchheight;
+    var temptype = req.body.searchtype;
+
     var nameQ = `SELECT * from people where Name = '${temptext}'`
     var sizeQ = `SELECT * from people where Size = ${tempnum}`
     var heightQ = `SELECT * from people where Height = ${tempnum}`
     var typeQ = `SELECT * from people where Type = '${temptext}'`
     var totalresults;
+    if(tempname != ""){
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying name");
-        totalresults = {'rows':result.rows}
+        results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        //res.render('pages/db', results);
+        res.render('pages/db', results);
         //res.end()
       })
-
-
+    }
+    else if(tempsize!=0){
       pool.query(sizeQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying size");
-        totalresults += {'rows':result.rows}
+        results += {'rows':result.rows}
         //totalresults = totalresults + results;
-        //res.render('pages/db', results);
+        res.render('pages/db', results);
         //res.end()
       })
-
+    }
+    else if(tempheight!=0){
       pool.query(heightQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying height");
-        totalresults += {'rows':result.rows}
+        results += {'rows':result.rows}
         //totalresults = totalresults + results;
-        //res.render('pages/db', results);
+        res.render('pages/db', results);
         //res.end()
       })
-
-
+    }
+    else if(temptype!=""){
       pool.query(typeQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying type");
-        totalresults += {'rows':result.rows}
-        console.log(totalresults);
+        results += {'rows':result.rows}
+        //console.log(totalresults);
+        //res.render('pages/db', totalresults);
         //totalresults = totalresults + results;
-        //res.render('pages/db', results);
+        res.render('pages/db', results);
         //res.end()
       })
-      res.render('pages/db', totalresults);
+    }
+      res.end();
   })
 
 
