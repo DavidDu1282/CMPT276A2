@@ -29,8 +29,8 @@ app.get('/Database', (req,res) => {
     if(error)
       res.end(error)
     results = {'rows':result.rows}
-    console.log(result.rows[0][2]);
-    res.send();
+    console.log(result.rows[0]);
+    res.send(results);
     //res.render('pages/db', results);
   })
 
