@@ -97,8 +97,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         console.log("displaying name");
-        results = {'rows':result.rows}
-        totalresults = totalresults + results;
+        totalresults += {'rows':result.rows}
+        //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
       })
@@ -109,8 +109,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         console.log("displaying size");
-        results = {'rows':result.rows}
-        totalresults = totalresults + results;
+        totalresults += {'rows':result.rows}
+        //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
       })
@@ -120,8 +120,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         console.log("displaying height");
-        results = {'rows':result.rows}
-        totalresults = totalresults + results;
+        totalresults += {'rows':result.rows}
+        //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
       })
@@ -132,9 +132,9 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         console.log("displaying type");
-        results = {'rows':result.rows}
+        totalresults += {'rows':result.rows}
         console.log(results);
-        totalresults = totalresults + results;
+        //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
       })
