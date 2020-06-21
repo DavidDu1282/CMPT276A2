@@ -97,7 +97,7 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         console.log("displaying name");
-        totalresults += {'rows':result.rows}
+        var totalresults = {'rows':result.rows}
         //totalresults = totalresults + results;
         //res.render('pages/db', results);
         //res.end()
