@@ -38,6 +38,22 @@ app.get('/Database', (req,res) => {
   })
 
 })
+app.get('/Main', (req,res) => {
+  var getUsersQuery = `SELECT * FROM people`;
+  var results;
+  pool.query(getUsersQuery,(error,result)=>{
+    if(error)
+      res.end(error)
+    results = {'rows':result.rows}
+    //console.log(result.rows[0]);
+    //rows.forEach(function(r) {
+
+    //});
+    //res.send(results);
+    res.render('pages/drawingPeople', results);
+  })
+
+})
 
 app.get('/users/:id', (req,res)=>{
   var uid = req.params.id;

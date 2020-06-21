@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+<h2>Main Display</h2>
+
+<ul>
+    <% rows.forEach(function(r) { %>
+      <canvas id="canvas" width="150" height="150"></canvas>
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        if (canvas.getContext) {
+          var context = canvas.getContext('2d');
+
+          context.fillRect(20,20,100,100);
+          context.clearRect(40,40,60,60);
+          context.strokeRect(45,45,50,50);
+        }
+      }
+      draw()
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>
