@@ -85,7 +85,7 @@ app.get('/users/:id', (req,res)=>{
     var sizeQ = `SELECT * from people where Size = ${temp}`
     var heightQ = `SELECT * from people where Height = ${temp}`
     var typeQ = `SELECT * from people where Type = '${temp}'`
-    if(typeof(temp) == String){
+    if(typeof(temp) == "string"){
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -96,7 +96,7 @@ app.get('/users/:id', (req,res)=>{
         res.end()
       })
     }
-    if(typeof(temp) == number){
+    if(typeof(temp) == "number"){
       pool.query(sizeQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -117,7 +117,7 @@ app.get('/users/:id', (req,res)=>{
         res.end()
       })
     }
-    if(typeof(temp) == String){
+    if(typeof(temp) == "string"){
       pool.query(typeQ,(error,result)=>{
         if(error){
           res.end(error)
