@@ -63,6 +63,7 @@ app.get('/users/:id', (req,res)=>{
     var addUsersQuery = `INSERT INTO PEOPLE (Name, size, height, type) VALUES (${uname},${usize},${uheight},${utype});`;
     var results;
     console.log("preparing to query");
+    console.log(addUsersQuery);
     pool.query(addUsersQuery,(error,result)=>{
       if(error){
         console.log("query returned error");
