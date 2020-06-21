@@ -29,6 +29,7 @@ app.get('/Database', (req,res) => {
     if(error)
       res.end(error)
     results = {'rows':result.rows}
+    console.log(results);
     res.render('pages/db', results);
   })
 
@@ -72,6 +73,7 @@ app.get('/users/:id', (req,res)=>{
         res.end(error)
       }
       console.log("displaying");
+      console.log(results);
       results = {'rows':result.rows}
       res.render('pages/db', results);
     })
@@ -124,6 +126,7 @@ app.get('/users/:id', (req,res)=>{
         }
         console.log("displaying type");
         results = {'rows':result.rows}
+        console.log(results);
         res.render('pages/db', results);
         res.end()
       })
