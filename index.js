@@ -30,10 +30,10 @@ app.get('/Database', (req,res) => {
       res.end(error)
     results = {'rows':result.rows}
     console.log(result.rows[0]);
-    rows.forEach(function(r) {
+    //rows.forEach(function(r) {
 
-    });
-    //res.send(results);
+    //});
+    res.send(results);
     res.render('pages/db', results);
   })
 
@@ -84,18 +84,11 @@ app.get('/users/:id', (req,res)=>{
 
     res.end();
   })
-  app.post('/searchuser', (req,res)=>{
+  app.post('/searchname', (req,res)=>{
     var tempname = req.body.searchname;
-    var tempsize = req.body.searchsize;
-    var tempheight =  req.body.searchheight;
-    var temptype = req.body.searchtype;
-
     var nameQ = `SELECT * from people where Name = '${tempname}'`
-    var sizeQ = `SELECT * from people where Size = ${tempsize}`
-    var heightQ = `SELECT * from people where Height = ${tempheight}`
-    var typeQ = `SELECT * from people where Type = '${temptype}'`
-    var totalresults;
-    if(tempname != ""){
+    var results;
+
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
@@ -103,52 +96,64 @@ app.get('/users/:id', (req,res)=>{
         console.log("displaying name");
         results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.send(results);
-        //res.render('pages/db', results);
+
+        res.render('pages/db', results);
         //res.end()
       })
-    }
-    else if(tempsize!=0){
-      pool.query(sizeQ,(error,result)=>{
+      res.end();
+  })
+  app.post('/searchsize', (req,res)=>{
+    var temp = req.body.searchsize;
+    var nameQ = `SELECT * from people where Size = '${temp}'`
+    var results;
+
+      pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying size");
-        results += {'rows':result.rows}
+        results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.send(results);
-        //res.render('pages/db', results);
+
+        res.render('pages/db', results);
         //res.end()
       })
-    }
-    else if(tempheight!=0){
-      pool.query(heightQ,(error,result)=>{
+      res.end();
+  })
+  app.post('/searchheight', (req,res)=>{
+    var temp = req.body.searchheight;
+    var nameQ = `SELECT * from people where Size = '${temp}'`
+    var results;
+
+      pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying height");
-        results += {'rows':result.rows}
+        results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.send(results);
-        //res.render('pages/db', results);
+
+        res.render('pages/db', results);
         //res.end()
       })
-    }
-    else if(temptype!=""){
-      pool.query(typeQ,(error,result)=>{
+      res.end();
+  })
+  app.post('/searchtype', (req,res)=>{
+    var temp = req.body.searchtype;
+    var nameQ = `SELECT * from people where Size = '${temp}'`
+    var results;
+
+      pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying type");
-        results += {'rows':result.rows}
-        //console.log(totalresults);
-        //res.render('pages/db', totalresults);
+        results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.send(results);
-        //res.render('pages/db', results);
+
+        res.render('pages/db', results);
         //res.end()
       })
-    }
       res.end();
   })
 
