@@ -91,7 +91,7 @@ app.get('/users/:id', (req,res)=>{
     var sizeQ = `SELECT * from people where Size = ${tempnum}`
     var heightQ = `SELECT * from people where Height = ${tempnum}`
     var typeQ = `SELECT * from people where Type = '${temptext}'`
-    var totalresults;
+
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
