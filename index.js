@@ -85,8 +85,8 @@ app.get('/users/:id', (req,res)=>{
     res.end();
   })
   app.post('/searchuser', (req,res)=>{
-    var temp = req.body.search;
-
+    var temptext = req.body.searchtext;
+    var tempnum = req.body.searchnum;
     var nameQ = `SELECT * from people where Name = '${temp}'`
     var sizeQ = `SELECT * from people where Size = ${temp}`
     var heightQ = `SELECT * from people where Height = ${temp}`
