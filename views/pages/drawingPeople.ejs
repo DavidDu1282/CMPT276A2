@@ -12,10 +12,12 @@
 <h2>Main Display</h2>
 
 <ul>
-     rows.forEach(function(r) {
-      <canvas id="canvas" width="150" height="150"></canvas>
+     <%rows.forEach(function(r) {%>
+      <canvas id="canvas$r" width="150" height="150"></canvas>
+      <script type = "text/javascript" src = "./drawPeople.js">
+      </script>
       function draw() {
-        var canvas = document.getElementById('canvas');
+        var canvas = document.getElementById('canvas$');
         if (canvas.getContext) {
           var context = canvas.getContext('2d');
 
@@ -25,7 +27,7 @@
         }
       }
       draw()
-    }); 
+    <% }); %>
 </ul>
 
 </div>
