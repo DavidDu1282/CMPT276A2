@@ -103,7 +103,8 @@ app.get('/users/:id', (req,res)=>{
         console.log("displaying name");
         results = {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.render('pages/db', results);
+        res.send(results);
+        //res.render('pages/db', results);
         //res.end()
       })
     }
@@ -115,7 +116,8 @@ app.get('/users/:id', (req,res)=>{
         console.log("displaying size");
         results += {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.render('pages/db', results);
+        res.send(results);
+        //res.render('pages/db', results);
         //res.end()
       })
     }
@@ -127,7 +129,8 @@ app.get('/users/:id', (req,res)=>{
         console.log("displaying height");
         results += {'rows':result.rows}
         //totalresults = totalresults + results;
-        res.render('pages/db', results);
+        res.send(results);
+        //res.render('pages/db', results);
         //res.end()
       })
     }
@@ -141,7 +144,8 @@ app.get('/users/:id', (req,res)=>{
         //console.log(totalresults);
         //res.render('pages/db', totalresults);
         //totalresults = totalresults + results;
-        res.render('pages/db', results);
+        res.send(results);
+        //res.render('pages/db', results);
         //res.end()
       })
     }
