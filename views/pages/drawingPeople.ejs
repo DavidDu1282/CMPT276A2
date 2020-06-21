@@ -12,17 +12,13 @@
 <h2>Main Display</h2>
   <svg id="svgOne" width="5000" height="3000">
 
-  </svg>
-  <script>
-     <% rows.forEach(function(r) {
-       var rect = createElement('rect');
-       rect.setAttribute(null, 'height', r.height);
-       rect.setAttribute(null, 'width', r.size/r.height*10);
-       rect.setAttribute(null, 'fill', '#'+Math.round(0xffffff * Math.random()).toString(16));
-       getElementById('svgOne').appendChild(rect);
-     });%>
-    </script>
 
+  <script>
+     <% rows.forEach(function(r) %>{
+      <rect x="50" y="50" width="50" height="50" fill="black" />
+     <%});%>
+    </script>
+  </svg>
 </div>
 
 </body>
