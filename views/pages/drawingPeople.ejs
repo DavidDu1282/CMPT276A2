@@ -14,8 +14,7 @@
 
      <%rows.forEach(function(r) {%>
       <canvas id="canvas$r" width="150" height="150"></canvas>
-      <script type = "text/javascript" src = "./drawPeople.js">
-      </script>
+      <script>
       function draw() {
         var canvas = document.getElementById('canvas$');
         if (canvas.getContext) {
@@ -27,6 +26,7 @@
         }
       }
       draw()
+      </script>
     <% }); %>
 
 
