@@ -82,8 +82,8 @@ app.get('/users/:id', (req,res)=>{
   })
   app.post('/searchuser', (req,res)=>{
     var temp = req.body.search;
-    if(typeof(temp) == String)
-      var nameQ = `SELECT * from people where Name = '${temp}'`
+
+    var nameQ = `SELECT * from people where Name = '${temp}'`
     var sizeQ = `SELECT * from people where Size = ${temp}`
     var heightQ = `SELECT * from people where Height = ${temp}`
     var typeQ = `SELECT * from people where Type = '${temp}'`
