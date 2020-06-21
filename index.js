@@ -29,7 +29,7 @@ app.get('/Database', (req,res) => {
     if(error)
       res.end(error)
     results = {'rows':result.rows}
-    console.log(results.name);
+    console.log(results[0]);
     //res.render('pages/db', results);
   })
 
