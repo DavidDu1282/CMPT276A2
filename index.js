@@ -88,7 +88,7 @@ app.get('/users/:id', (req,res)=>{
       if(error){
         res.end(error)
       }
-      console.log("displaying");
+      console.log("displaying name");
       results = {'rows':result.rows}
       res.render('pages/db', results);
       res.end()
@@ -97,7 +97,7 @@ app.get('/users/:id', (req,res)=>{
       if(error){
         res.end(error)
       }
-      console.log("displaying");
+      console.log("displaying size");
       results = {'rows':result.rows}
       res.render('pages/db', results);
       res.end()
@@ -106,7 +106,7 @@ app.get('/users/:id', (req,res)=>{
       if(error){
         res.end(error)
       }
-      console.log("displaying");
+      console.log("displaying height");
       results = {'rows':result.rows}
       res.render('pages/db', results);
       res.end()
@@ -115,7 +115,7 @@ app.get('/users/:id', (req,res)=>{
       if(error){
         res.end(error)
       }
-      console.log("displaying");
+      console.log("displaying type");
       results = {'rows':result.rows}
       res.render('pages/db', results);
       res.end()
