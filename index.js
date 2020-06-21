@@ -91,15 +91,16 @@ app.get('/users/:id', (req,res)=>{
     var sizeQ = `SELECT * from people where Size = ${tempnum}`
     var heightQ = `SELECT * from people where Height = ${tempnum}`
     var typeQ = `SELECT * from people where Type = '${temptext}'`
-
+    var totalresults;
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         console.log("displaying name");
         results = {'rows':result.rows}
-        res.render('pages/db', results);
-        res.end()
+        totalresults = totalresults + results;
+        //res.render('pages/db', results);
+        //res.end()
       })
 
 
@@ -109,8 +110,9 @@ app.get('/users/:id', (req,res)=>{
         }
         console.log("displaying size");
         results = {'rows':result.rows}
-        res.render('pages/db', results);
-        res.end()
+        totalresults = totalresults + results;
+        //res.render('pages/db', results);
+        //res.end()
       })
 
       pool.query(heightQ,(error,result)=>{
@@ -119,8 +121,9 @@ app.get('/users/:id', (req,res)=>{
         }
         console.log("displaying height");
         results = {'rows':result.rows}
-        res.render('pages/db', results);
-        res.end()
+        totalresults = totalresults + results;
+        //res.render('pages/db', results);
+        //res.end()
       })
 
 
@@ -131,10 +134,11 @@ app.get('/users/:id', (req,res)=>{
         console.log("displaying type");
         results = {'rows':result.rows}
         console.log(results);
-        res.render('pages/db', results);
-        res.end()
+        totalresults = totalresults + results;
+        //res.render('pages/db', results);
+        //res.end()
       })
-    
+      res.render('pages/db', totalresults);
   })
 
 
