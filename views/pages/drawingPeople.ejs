@@ -13,9 +13,9 @@
     <% i = 0 %>
     <% rows.forEach(function(r) { %>
         <% i+= r.height*10 + 30%>
-        <svg width="<%= r.size/r.height*10 %>" height="<%= r.height*5 %>">
+        <svg width="<%= r.size/r.height*10 %>" height="<%= r.height*5 + 30%>">
           <rect width="<%= r.size/r.height*10 %>" height="<%= r.height*5 %>" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" id  = "<%= r.name %>" onclick = "window.alert('<%= r.name %>,<%= r.size %>,<%= r.height %>,<%= r.type %>')">
-          <text x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="5px" dy=".3em"><%= r.name %></text>
+          <text stroke="black" stroke-width="5px" dy=".3em"><%= r.name %></text>
           Sorry, your browser does not support inline SVG.
         </svg>
     <% }); %>
