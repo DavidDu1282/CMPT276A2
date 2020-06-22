@@ -22,13 +22,13 @@
 
 </div>
 <div class="container">
-  <form class = "" action="/edit people attribute" method ="post">
+
     <select name="people" id="people">
       <% rows.forEach(function(r) { %>
         <option value="<%= r.name %>"><%= r.name %></option>
       <% }); %>
     </ select>
-
+</div>
 
 
   <form class = "" action="/deletebyname" method ="post">
@@ -47,6 +47,6 @@
     <input type ="text" name="deletebytype" value ="" placeholder="Delete person by type" id = 'Name' >
     <input type ="submit" name="sub" value = "Search and delete matching entries"><br>
   </form>
-</div>
+
 </body>
 </html>
