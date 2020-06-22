@@ -191,11 +191,17 @@ app.get('/users/:id', (req,res)=>{
           results = {'rows':result.rows}
           res.render('pages/db', results);
         }
+        else{
+          console.log("NameQ failed");
+        }
       })
       pool.query(numberQ,(error,result)=>{
         if(!error){
           results = {'rows':result.rows}
           res.render('pages/db', results);
+        }
+        else{
+          console.log("numberQ failed");
         }
       })
 
