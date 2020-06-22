@@ -182,12 +182,13 @@ app.get('/users/:id', (req,res)=>{
     var tempatt = req.body.attribute;
     var tempnew = req.body.newValue;
     //if(tempatt == 'size' || tempatt == 'height')
-    var nameQ = `UPDATE people set ${tempatt} = 'tempnew' where name = '${tempname}'`
-    var numberQ = `UPDATE people set ${tempatt} = tempnew where name = '${tempname}'`
+    var nameQ = `UPDATE people set ${tempatt} = '${tempnew}' where name = '${tempname}'`
+    var numberQ = `UPDATE people set ${tempatt} = ${tempnew} where name = '${tempname}'`
     var results;
-
+    //Testing github
       pool.query(nameQ,(error,result)=>{
         if(!error){
+          console.log("nameQ success");
           results = {'rows':result.rows}
           res.render('pages/db', results);
         }
@@ -197,6 +198,7 @@ app.get('/users/:id', (req,res)=>{
       })
       pool.query(numberQ,(error,result)=>{
         if(!error){
+          console.log("numberQ success");
           results = {'rows':result.rows}
           res.render('pages/db', results);
         }
