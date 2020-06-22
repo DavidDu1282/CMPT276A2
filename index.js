@@ -220,7 +220,7 @@ app.get('/users/:id', (req,res)=>{
         }
         results = {'rows':result.rows}
 
-        res.render('pages/db', results);
+        res.render('pages/returnToMain', results);
       })
   })
   app.post('/deletebyname', (req,res)=>{
@@ -233,7 +233,7 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         results = {'rows':result.rows}
-        res.render('pages/db', results);
+        res.render('pages/returnToMain', results);;
         //res.end()
       })
   })
@@ -246,7 +246,7 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         results = {'rows':result.rows}
-        res.render('pages/db', results);
+        res.render('pages/returnToMain', results);
         //res.end()
       })
   })
@@ -259,7 +259,7 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         results = {'rows':result.rows}
-        res.render('pages/db', results);
+        res.render('pages/returnToMain', results);
         //res.end()
       })
   })
