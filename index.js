@@ -177,6 +177,56 @@ app.get('/users/:id', (req,res)=>{
       })
       //res.end();
   })
+  app.post('/deletebysize', (req,res)=>{
+    var temp = req.body.deletebysize;
+    var nameQ = `Delete  from people where Size = ${temp}`
+    //var results;
+
+      pool.query(nameQ,(error,result)=>{
+        if(error){
+          res.end(error)
+        }
+        results = {'rows':result.rows}
+        res.end()
+      })
+  })
+  app.post('/deletebyname', (req,res)=>{
+    var temp = req.body.deletebyname;
+    var nameQ = `Delete  from people where name = '${temp}'`
+  //  var results;
+
+      pool.query(nameQ,(error,result)=>{
+        if(error){
+          res.end(error)
+        }
+        //results = {'rows':result.rows}
+        res.end()
+      })
+  })
+  app.post('/deletebytype', (req,res)=>{
+    var temp = req.body.deletebytype;
+    var nameQ = `Delete  from people where type = '${temp}'`
+    //var results;
+      pool.query(nameQ,(error,result)=>{
+        if(error){
+          res.end(error)
+        }
+        //results = {'rows':result.rows}
+        res.end()
+      })
+  })
+  app.post('/deletebyheight', (req,res)=>{
+    var temp = req.body.deletebyheight;
+    var nameQ = `Delete  from people where height = ${temp}`
+    var results;
+      pool.query(nameQ,(error,result)=>{
+        if(error){
+          res.end(error)
+        }
+        //results = {'rows':result.rows}
+        res.end()
+      })
+  })
 
 
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
