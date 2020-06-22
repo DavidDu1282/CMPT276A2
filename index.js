@@ -177,6 +177,23 @@ app.get('/users/:id', (req,res)=>{
       })
       //res.end();
   })
+  app.post('/replacename', (req,res)=>{
+    var tempname = req.body.name;
+    var tempatt = req.body.attribute;
+    var tempnew = req.body.newValue;
+    //if(tempatt == 'size' || tempatt == 'height')
+    var nameQ = `UPDATE people set ${tempatt} = 'tempnew' where name = '${tempname}'`
+    var numberQ = `UPDATE people set ${tempatt} = tempnew where name = '${tempname}'`
+    var results;
+
+      pool.query(nameQ,(error,result)=>{
+
+      })
+      pool.query(numberQ,(error,result)=>{
+
+      })
+
+  })
   app.post('/deletebysize', (req,res)=>{
     var temp = req.body.deletebysize;
     var nameQ = `Delete  from people where Size = ${temp}`
