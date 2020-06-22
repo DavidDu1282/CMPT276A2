@@ -15,8 +15,8 @@
     <% i = 0 %>
     <% rows.forEach(function(r) { %>
         <% i+= r.height*10 + 30%>
-        <svg width="200" height="200">
-          <rect width="<%= r.size/r.height*10 %>" height="<%= r.height %>" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+        <svg width="400" height="400">
+          <rect width="<%= r.size/r.height*10 %>" height="<%= r.height*5 %>" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
 
           Sorry, your browser does not support inline SVG.
         </svg>
