@@ -184,6 +184,7 @@ app.get('/users/:id', (req,res)=>{
     //if(tempatt == 'size' || tempatt == 'height')
     var nameQ = `UPDATE people set ${tempatt} = '${tempnew}' where name = '${tempname}'`
     var numberQ = `UPDATE people set ${tempatt} = ${tempnew} where name = '${tempname}'`
+    var bool = 0;
     var results;
     if(typeof(tempnew)!="number"){
       pool.query(nameQ,(error,result)=>{
@@ -193,6 +194,7 @@ app.get('/users/:id', (req,res)=>{
           res.render('pages/returnToMain', results);
         }
         else{
+          bool++;
           console.log("NameQ failed");
         }
       })
@@ -205,6 +207,11 @@ app.get('/users/:id', (req,res)=>{
         }
         else{
           console.log("numberQ failed");
+          console.log("numberQ failed");
+          console.log("numberQ failed");
+          if(bool>=1){
+            res.render('pages/returnToMain', results);
+          }
         }
       })
 
