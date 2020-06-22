@@ -86,6 +86,7 @@ app.get('/users/:id', (req,res)=>{
       //res.render('pages/db', results);
     })
     //*/
+    /*
     var getUsersQuery = `SELECT * from people;`
     console.log("preparing to display");
     pool.query(getUsersQuery,(error,result)=>{
@@ -97,6 +98,8 @@ app.get('/users/:id', (req,res)=>{
       results = {'rows':result.rows}
       res.render('pages/db', results);
     })
+    */
+    res.render('pages/returnToMain', results);
 
     //res.end();
   })
