@@ -23,21 +23,18 @@
 </div>
 <div class="container">
 
-    <select name="people" id="people">
-      <% rows.forEach(function(r) { %>
-        <option value="<%= r.name %>"><%= r.name %></option>
-      <% }); %>
-    </ select>
+  <form class = "" action="/replacename" method ="post">
+    <input type ="text" name="name" value ="" placeholder="Old Name" id = 'Old Name' >
+    <input type ="text" name="attribute" value ="" placeholder="attribute" id = 'attribute' >
+    <input type ="text" name="new value" value ="" placeholder="new value" id = 'new value' >
+    <input type ="submit" name="sub" value = "Replace selected attribute of person name"><br>
+  </form>
+
+
 </div>
 
-
+<div class="container">
   <form class = "" action="/deletebyname" method ="post">
-    <select name="deletepeople" id="people">
-      <option value="Name">Name</option>
-      <option value="Size">Name</option>
-      <option value="Height">Name</option>
-      <option value="Type">Name</option>
-    </ select>
     <input type ="text" name="deletebyname" value ="" placeholder="Delete person by name" id = 'Name' >
     <input type ="submit" name="sub" value = "Search and delete matching entries"><br>
   </form>
@@ -53,6 +50,6 @@
     <input type ="text" name="deletebytype" value ="" placeholder="Delete person by type" id = 'Name' >
     <input type ="submit" name="sub" value = "Search and delete matching entries"><br>
   </form>
-
+</div>
 </body>
 </html>
