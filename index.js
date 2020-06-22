@@ -185,7 +185,7 @@ app.get('/users/:id', (req,res)=>{
     var nameQ = `UPDATE people set ${tempatt} = '${tempnew}' where name = '${tempname}'`
     var numberQ = `UPDATE people set ${tempatt} = ${tempnew} where name = '${tempname}'`
     var results;
-    //Testing github
+    if(typeof(tempnew)!="number"){
       pool.query(nameQ,(error,result)=>{
         if(!error){
           console.log("nameQ success");
@@ -196,6 +196,7 @@ app.get('/users/:id', (req,res)=>{
           console.log("NameQ failed");
         }
       })
+    }
       pool.query(numberQ,(error,result)=>{
         if(!error){
           console.log("numberQ success");
