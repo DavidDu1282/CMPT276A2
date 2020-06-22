@@ -187,7 +187,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         results = {'rows':result.rows}
-        res.end()
+        location.reload();
+        //res.end()
       })
   })
   app.post('/deletebyname', (req,res)=>{
@@ -200,7 +201,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         //results = {'rows':result.rows}
-        res.end()
+        location.reload();
+        //res.end()
       })
   })
   app.post('/deletebytype', (req,res)=>{
@@ -212,7 +214,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         //results = {'rows':result.rows}
-        res.end()
+        location.reload();
+        //res.end()
       })
   })
   app.post('/deletebyheight', (req,res)=>{
@@ -224,7 +227,8 @@ app.get('/users/:id', (req,res)=>{
           res.end(error)
         }
         //results = {'rows':result.rows}
-        res.end()
+        location.reload();
+        //res.end()
       })
   })
 
