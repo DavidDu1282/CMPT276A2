@@ -190,7 +190,7 @@ app.get('/users/:id', (req,res)=>{
         if(!error){
           console.log("nameQ success");
           results = {'rows':result.rows}
-          res.render('pages/db', results);
+          res.render('pages/returnToMain', results);
         }
         else{
           console.log("NameQ failed");
@@ -200,7 +200,7 @@ app.get('/users/:id', (req,res)=>{
         if(!error){
           console.log("numberQ success");
           results = {'rows':result.rows}
-          res.render('pages/db', results);
+          res.render('pages/returnToMain', results);
         }
         else{
           console.log("numberQ failed");
