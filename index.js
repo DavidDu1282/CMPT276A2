@@ -187,10 +187,16 @@ app.get('/users/:id', (req,res)=>{
     var results;
 
       pool.query(nameQ,(error,result)=>{
-
+        if(!error){
+          results = {'rows':result.rows}
+          res.render('pages/db', results);
+        }
       })
       pool.query(numberQ,(error,result)=>{
-
+        if(!error){
+          results = {'rows':result.rows}
+          res.render('pages/db', results);
+        }
       })
 
   })
