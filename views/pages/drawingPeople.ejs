@@ -15,13 +15,15 @@
         <% i+= r.height*10 + 30%>
         <svg width="<%= r.size/r.height*20+10 %>" height="<%= r.height*10 + 10%>">
           <rect width="<%= r.size/r.height*10 %>" height="<%= r.height*5 %>" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" id  = "<%= r.name %>" onclick = "window.alert('<%= r.name %>,<%= r.size %>,<%= r.height %>,<%= r.type %>')"></rect>
-          <text x="5" y=45% font-family="Roboto" text-anchor="middle" font-size="12" fill="#111111">  "<%= r.name %>"  </text>
+          <text x="5" y=45% font-family="Roboto" text-anchor="middle" font-size="12" fill="#111111">  <%= r.name %>  </text>
           Sorry, your browser does not support inline SVG.
         </svg>
     <% }); %>
-    <script type="text/javascript" src = "./drawPeople.js">
-    </script>
-
+    <select name="people" id="people">
+      <% rows.forEach(function(r) { %>
+        <option value="<%= r.name %>"><%= r.name %></option>
+      <% }); %>
+    </select>
 </div>
 
 </body>
