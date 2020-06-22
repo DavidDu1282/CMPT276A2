@@ -180,41 +180,41 @@ app.get('/users/:id', (req,res)=>{
   app.post('/deletebysize', (req,res)=>{
     var temp = req.body.deletebysize;
     var nameQ = `Delete  from people where Size = ${temp}`
-    //var results;
+    var results;
 
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
         results = {'rows':result.rows}
-        location.reload();
-        //res.end()
+
+        res.render('pages/db', results);
       })
   })
   app.post('/deletebyname', (req,res)=>{
     var temp = req.body.deletebyname;
     var nameQ = `Delete  from people where name = '${temp}'`
-  //  var results;
+    var results;
 
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
-        //results = {'rows':result.rows}
-        location.reload();
+        results = {'rows':result.rows}
+        res.render('pages/db', results);
         //res.end()
       })
   })
   app.post('/deletebytype', (req,res)=>{
     var temp = req.body.deletebytype;
     var nameQ = `Delete  from people where type = '${temp}'`
-    //var results;
+    var results;
       pool.query(nameQ,(error,result)=>{
         if(error){
           res.end(error)
         }
-        //results = {'rows':result.rows}
-        location.reload();
+        results = {'rows':result.rows}
+        res.render('pages/db', results);
         //res.end()
       })
   })
@@ -226,8 +226,8 @@ app.get('/users/:id', (req,res)=>{
         if(error){
           res.end(error)
         }
-        //results = {'rows':result.rows}
-        location.reload();
+        results = {'rows':result.rows}
+        res.render('pages/db', results);
         //res.end()
       })
   })
